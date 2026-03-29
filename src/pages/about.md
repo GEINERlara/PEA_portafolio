@@ -3,28 +3,44 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-Bienvenido a mi rincón digital. Soy un **desarrollador** y **estudiante** apasionado por la tecnología, los videojuegos y construir cosas que vivan en internet.
-
 ## ¿Quién soy?
 
-Me llamo Andrés, y desde que recuerdo siempre tuve curiosidad por entender cómo funcionan las cosas — desde desarmar juguetes de niño hasta desarmar código ajeno a las 2 AM. Actualmente estudio ingeniería mientras desarrollo proyectos que me retan a aprender algo nuevo cada día.
 
-Cuando no estoy programando, probablemente estoy en algún mundo virtual explorando mapas, completando misiones o compitiendo online. Los videojuegos no solo son mi hobby, también me enseñaron a resolver problemas, trabajar en equipo y, sobre todo, a no rendirme después del intento #847.
+Hola! me llamo Geiner. Soy Ingeniero Industrial con mentalidad analítica y orientación a sistemas complejos. Me interesa entender **cómo funcionan los procesos, por qué fallan y cómo pueden optimizarse con datos**. Vengo de entornos reales —banca, BPO y educación— donde los datos no siempre están limpios ni los problemas bien definidos, y ahí es donde me siento cómodo: estructurando, cuestionando y llevando ambigüedad a modelos operables.
+
+Creo en el aprendizaje autodidacta bien documentado, en construir criterio técnico antes que hype, y en usar la ingeniería y la estadística para resolver problemas concretos.
+
 
 ## Lo que hago
 
-- **Desarrollo web** — Me encanta construir experiencias web modernas con tecnologías como Astro, React, TypeScript y todo lo que el ecosistema JavaScript tiene para ofrecer.
-- **Open Source** — Creo en el poder del código abierto. Puedes encontrar mis proyectos en [GitHub](https://github.com/0xdres/).
-- **Aprendizaje continuo** — Siempre estoy explorando nuevas herramientas, frameworks y conceptos. La tecnología evoluciona rápido y me gusta ir al ritmo.
+Trabajo en análisis de datos y levantamiento de requerimientos en contextos de negocio y tecnología. He participado en:
 
-## Gaming
+- Análisis, calidad e integración de datos operativos y estratégicos.
+- Construcción y automatización de reportes con **SQL, Python, Excel y Power BI**.
+- Diseño de controles de calidad de datos y alertas tempranas.
+- Documentación de procesos, flujos y reglas de negocio usando BPMN y herramientas visuales.
+- Trabajo colaborativo con áreas de negocio, TI y equipos ágiles (**Scrum / Kanban, Azure DevOps**).
 
-Los videojuegos son parte de mi ADN. Desde RPGs épicos hasta shooters competitivos, disfruto prácticamente cualquier género. Es ese espacio donde la creatividad se encuentra con la estrategia y la diversión pura.
+Actualmente complemento mi base de Ingeniería Industrial con **Desarrollo de Software en el SENA**, fortaleciendo principios de programación, control de versiones (**Git / GitHub**) y buenas prácticas técnicas que conectan análisis, datos y sistemas.
+
+
+
+## Hacia dónde voy / Intereses  
+
+Me interesa la **Ciencia de Datos aplicada**, especialmente cuando se cruza con **estadística y optimización** para apoyar la toma de decisiones en sistemas reales.
+
+Disfruto trabajar con datos que tienen contexto, restricciones y consecuencias: entender el problema, cuestionar los supuestos y convertir información imperfecta en modelos útiles para decidir mejor.
+
+Mi enfoque combina:
+- **Estadística aplicada y análisis de datos**, para identificar patrones, riesgos y oportunidades más allá de lo descriptivo.
+- **Optimización y pensamiento ingenieril**, para estructurar problemas y evaluar alternativas bajo restricciones reales.
+
+Las herramientas técnicas (SQL, Python, automatización, pipelines) son para mí un **medio**, no un fin: sirven para que el análisis sea reproducible, escalable y utilizable en distintos entornos y sectores.
+
 
 ## Este blog
 
-**Devosfera** nació como un espacio para documentar mi viaje como desarrollador, compartir lo que aprendo y conectar con personas que comparten las mismas pasiones. Aquí encontrarás posts sobre desarrollo, tecnología, y alguna que otra reflexión random de madrugada.
+Este blog hace parte de mi **PEA (Proceso de Enseñanza y Aprendizaje)**, un espacio donde documento proyectos, ideas y experimentos mientras construyo criterio técnico en ciencia de datos, optimización y análisis aplicado.
 
-Si quieres conectar, no dudes en encontrarme en [GitHub](https://github.com/0xdres/), [X](https://x.com/avdyen) o [LinkedIn](https://www.linkedin.com/in/avdyan/). Siempre es bueno conocer gente cool de la comunidad.
+Si quieres conectar, no dudes en encontrarme en [GitHub](https://github.com/GEINERlara) o  [LinkedIn](https://www.linkedin.com/in/geinerlararada/). Siempre es bueno conocer gente cool de la comunidad.
 
-> _"El código es poesía, pero con más puntos y comas."_ — Yo, probablemente
