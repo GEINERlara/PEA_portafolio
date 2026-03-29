@@ -4,7 +4,7 @@ import IconSearch from "@/assets/icons/IconSearch.svg";
 import IconArchive from "@/assets/icons/IconArchive.svg";
 import IconGallery from "@/assets/icons/IconPortafolio.svg";
 import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
-import Logo from "@/assets/logo/devosfera.svg";
+import Logo from "@/assets/logo/LogoA.svg";
 import LinkButton from "./LinkButton.astro";
 import MobileMenu from "./MobileMenu.astro";
 import { SITE } from "@/config";
@@ -49,7 +49,7 @@ const isActive = (path: string) => {
           class="group relative z-20 flex items-center gap-2 text-xl font-bold tracking-tight sm:text-2xl"
         >
           <!-- <span class="nav-logo-text">{SITE.title}</span> -->
-          <Logo class="w-37.5 dark:invert" />
+          <Logo class="logo-header w-37.5" />
         </a>
 
         <!-- Nav area -->
@@ -126,8 +126,8 @@ const isActive = (path: string) => {
                       "nav-link",
                       { "nav-active": isActive("/galleries") },
                     ]}
-                    title="Galerías"
-                    aria-label="galleries"
+                    title="Portafolio"
+                    aria-label="Portafolio"
                   >
                     <IconGallery class="nav-icon nav-icon--gallery hidden sm:inline-block" />
                     <span class="sm:sr-only">Galerías</span>
@@ -224,6 +224,31 @@ const isActive = (path: string) => {
       transform 0.3s ease,
       filter 0.3s ease;
     transform-origin: 342px 130px;
+  }
+
+  /* ─── Logo Header Styles ─── */
+  .logo-header {
+    color: var(--foreground);
+    transition: color 0.2s ease, filter 0.2s ease;
+    filter: brightness(1);
+  }
+
+  .logo-header:is(svg) {
+    fill: currentColor;
+    stroke: currentColor;
+  }
+
+  .group:hover .logo-header {
+    color: var(--accent);
+    filter: brightness(1.1) drop-shadow(0 0 4px rgba(var(--accent-rgb), 0.3));
+  }
+
+  :root.dark .logo-header {
+    filter: brightness(0.95) contrast(1.1);
+  }
+
+  :root.dark .group:hover .logo-header {
+    filter: brightness(1.15) drop-shadow(0 0 6px rgba(var(--accent-rgb), 0.4)) contrast(1.1);
   }
 
   .group:hover :global(.logo-text-left) {

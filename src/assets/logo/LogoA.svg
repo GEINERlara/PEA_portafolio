@@ -1,0 +1,27 @@
+<svg
+  width="260"
+  height="70"
+  viewBox="0 0 260 70"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <style>
+    .logo {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 38px;
+      letter-spacing: -1.5px;
+    }
+    .main {
+      fill: var(--text-color);
+    }
+    .accent {
+      fill: var(--accent-color);
+    }
+  </style>
+
+  <!-- Texto principal -->
+  <text x="10" y="48" class="logo main">PEA</text>
+
+  <!-- Llaves pegadas -->
+  <text x="84" y="50" class="logo accent">{}</text>
+</svg>
