@@ -2,7 +2,7 @@
 import IconMoon from "@/assets/icons/IconMoon.svg";
 import IconSearch from "@/assets/icons/IconSearch.svg";
 import IconArchive from "@/assets/icons/IconArchive.svg";
-import IconGallery from "@/assets/icons/IconGallery.svg";
+import IconGallery from "@/assets/icons/IconPortafolio.svg";
 import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import Logo from "@/assets/logo/devosfera.svg";
 import LinkButton from "./LinkButton.astro";
@@ -111,7 +111,7 @@ const isActive = (path: string) => {
                     title="Archives"
                     aria-label="archives"
                   >
-                    <IconArchive class="hidden sm:inline-block" />
+                    <IconArchive class="nav-icon hidden sm:inline-block" />
                     <span class="sm:sr-only">Archives</span>
                   </LinkButton>
                 </li>
@@ -129,7 +129,7 @@ const isActive = (path: string) => {
                     title="Galerías"
                     aria-label="galleries"
                   >
-                    <IconGallery class="hidden sm:inline-block" />
+                    <IconGallery class="nav-icon nav-icon--gallery hidden sm:inline-block" />
                     <span class="sm:sr-only">Galerías</span>
                   </LinkButton>
                 </li>
@@ -313,6 +313,36 @@ const isActive = (path: string) => {
     border-radius: 0.5rem;
     transition: color 0.2s ease, background-color 0.2s ease;
     color: var(--foreground);
+  }
+
+  /* ─── Normalized Icon Styles ─── */
+  .nav-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    height: 1em;
+    font-size: 1.125rem;
+  }
+
+  /* Gallery icon correction: viewBox 0 0 32 32 needs upscaling */
+  .nav-icon--gallery {
+    transform: scale(1.333) !important;
+    transform-origin: center;
+    will-change: auto !important;
+  }
+
+  /* Bloquear cualquier transición de transform en todos los estados */
+  .nav-link .nav-icon,
+  .nav-link .nav-icon--gallery,
+  .nav-link:hover .nav-icon,
+  .nav-link:hover .nav-icon--gallery,
+  .nav-link:active .nav-icon,
+  .nav-link:active .nav-icon--gallery,
+  .nav-link.nav-active .nav-icon,
+  .nav-link.nav-active .nav-icon--gallery {
+    transform: scale(1.333) !important;
+    transition: none !important;
   }
 
   /* ─── Desktop Search Button with ⌘K ─── */
