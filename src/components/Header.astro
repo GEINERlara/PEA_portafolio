@@ -238,36 +238,24 @@ const isActive = (path: string) => {
     stroke: currentColor;
   }
 
-  /* ─── Logo PEA: color fijo y estable de las llaves {} ─── */
+  /* ─── Logo PEA: color de las llaves {} ─── */
+  .logo-header {
+    /* color base del logo */
+    color: var(--foreground);
 
-/* Texto PEA sigue usando currentColor */
-  .logo-header :global(.main) {
-    fill: currentColor;
+    /* color específico de las llaves en modo claro */
+    --accent-color: rgb(167, 90, 90);
   }
 
- /* Texto principal PEA */
-.logo-header :global(.main) {
-  fill: currentColor;
-}
+  /* Modo oscuro (usa .dark, NO :root.dark) */
+  .dark .logo-header {
+    --accent-color: rgb(110, 135, 95); /* verde seco opaco */
+  }
 
-/* Llaves {} en modo claro */
-.logo-header :global(.accent) {
-  fill: rgb(167, 90, 90);
-}
-
-/* Llaves {} en modo oscuro — usando el sistema REAL del proyecto */
-:root.dark .logo-header :global(.accent) {
-  fill: rgb(110, 135, 95); /* verde seco opaco */
-}
-
-/* Hover solo afecta al texto, no a las llaves */
-.group:hover .logo-header {
-  color: var(--accent);
-}
   /* Hover del logo */
-/*   .group:hover .logo-header {
+  .group:hover .logo-header {
     color: var(--accent);
-  } */
+  }
 
   /* Mantener el color de las llaves {} en hover */
   .group:hover .logo-header :global(.accent) {
@@ -280,14 +268,14 @@ const isActive = (path: string) => {
     filter: brightness(1.1) drop-shadow(0 0 4px rgba(var(--accent-rgb), 0.3));
   }
 
-  /* :root.dark .logo-header {
+  :root.dark .logo-header {
     filter: brightness(0.95) contrast(1.1);
   }
 
   :root.dark .group:hover .logo-header {
     filter: brightness(1.15) drop-shadow(0 0 6px rgba(var(--accent-rgb), 0.4)) contrast(1.1);
   }
- */
+
   .group:hover :global(.logo-text-left) {
     transform: translateX(-5px);
     filter: drop-shadow(0 0 3px rgba(56, 66, 77, 0.2));
