@@ -238,6 +238,31 @@ const isActive = (path: string) => {
     stroke: currentColor;
   }
 
+  /* ─── Logo PEA: color de las llaves {} ─── */
+  .logo-header {
+    /* color base del logo */
+    color: var(--foreground);
+
+    /* color específico de las llaves en modo claro */
+    --accent-color: rgb(167, 90, 90);
+  }
+
+  /* Modo oscuro (usa .dark, NO :root.dark) */
+  .dark .logo-header {
+    --accent-color: rgb(110, 135, 95); /* verde seco opaco */
+  }
+
+  /* Hover del logo */
+  .group:hover .logo-header {
+    color: var(--accent);
+  }
+
+  /* Mantener el color de las llaves {} en hover */
+  .group:hover .logo-header :global(.accent) {
+    fill: var(--accent-color);
+  }
+
+
   .group:hover .logo-header {
     color: var(--accent);
     filter: brightness(1.1) drop-shadow(0 0 4px rgba(var(--accent-rgb), 0.3));
