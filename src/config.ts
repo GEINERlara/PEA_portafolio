@@ -3,7 +3,7 @@ export const SITE = {
   author: "Geienr Lara",
   profile: "https://github.com/0xdres",
   desc: "Un blog para compartir mis pensamientos y proyectos mientras aprendo cosas nuevas.",
-  title: "Devosfera",
+  title: "PEA",
   ogImage: "devosfera-og.webp", // ubicado en la carpeta public
   lightAndDarkMode: true,
   postPerIndex: 6,
