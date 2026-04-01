@@ -7,6 +7,8 @@ tags:
   - urbano
   - ciudad
 featured: true
+repo: "https://github.com/tuusuario/plataforma-gestion"
+demo: "https://www.linkedin.com/in/geinerlararada/"
 draft: false
 ---
 
