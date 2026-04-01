@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { gallery: slug } = Astro.params;
-const { title, description, pubDatetime, coverImage, tags } = entry.data;
+const { title, description, pubDatetime, coverImage, tags, repo, demo } = entry.data;
 
 // Cargar todas las imágenes de la galería en build-time con un glob estático
 const allImages = import.meta.glob<{ default: ImageMetadata }>(
@@ -126,6 +126,60 @@ const hasCoverInFolder = coverImage
               class="opacity-70 [&>svg]:hidden"
             />
           </div>
+
+          <!-- Repository button -->
+          {
+            repo && (
+              <a
+                href={repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 rounded-lg border border-border/25 bg-muted/10 px-2.5 py-1 backdrop-blur-sm transition-all duration-200 hover:border-accent/40 hover:bg-accent/5"
+                title="Ir al repositorio"
+              >
+                <svg
+                  class="size-3.5 text-accent/70"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c2.8-.3 5.8-1.4 5.8-7a5.7 5.7 0 0 0-1.7-4c.3-1 1-3.3-1-4.4 0 0-1.4-.5-4.5 1.7a12.2 12.2 0 0 0-4.2-.7 12.2 12.2 0 0 0-4.2.7C6.5 2.8 5.1 3.3 5.1 3.3c-2 1.1-1.3 3.4-1 4.4A5.7 5.7 0 0 0 2.1 11c0 5.6 3 6.7 5.8 7a4.8 4.8 0 0 0-1 3.5v4" />
+                  <circle cx="9" cy="19" r="1" />
+                </svg>
+                <span class="opacity-70">Repositorio</span>
+              </a>
+            )
+          }
+
+          <!-- Demo button -->
+          {
+            demo && (
+              <a
+                href={demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 rounded-lg border border-border/25 bg-muted/10 px-2.5 py-1 backdrop-blur-sm transition-all duration-200 hover:border-accent/40 hover:bg-accent/5"
+                title="Ver demo del proyecto"
+              >
+                <svg
+                  class="size-3.5 text-accent/70"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                </svg>
+                <span class="opacity-70">Ver demo</span>
+              </a>
+            )
+          }
         </div>
 
         <!-- Description (optional) -->

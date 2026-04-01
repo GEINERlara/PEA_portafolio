@@ -36,6 +36,8 @@ const galleries = defineCollection({
       draft: z.boolean().optional(),
       coverImage: image().optional(),
       tags: z.array(z.string()).default([]),
+      repo: z.string().optional(),
+      demo: z.string().optional(),
     }),
 });
 
