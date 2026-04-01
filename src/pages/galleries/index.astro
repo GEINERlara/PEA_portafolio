@@ -55,7 +55,7 @@ const galleries = rawGalleries
   });
 ---
 
-<Layout title={`Galerías | ${SITE.title}`}>
+<Layout title={`Portafolio | ${SITE.title}`}>
   <Header />
   <Breadcrumb />
   <main id="main-content" class="app-layout pb-12">
@@ -67,15 +67,15 @@ const galleries = rawGalleries
       <div class="aurora-mouse" data-archive-mouse></div>
       <div class="relative z-10">
         <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">
-          <span class="glow-text">Galerías</span>
+          <span class="glow-text">Portafolio</span>
         </h1>
         <p class="mt-3 max-w-lg text-foreground/70 italic">
-          Colecciones de imágenes para compartir momentos y proyectos.
+          Mis proyectos y trabajos destacados en desarrollo y diseño.
         </p>
         <div class="mt-4 flex flex-wrap items-center gap-2">
           <span class="hero-badge"
             >{galleries.length}
-            {galleries.length === 1 ? "galería" : "galerías"}</span
+            {galleries.length === 1 ? "proyecto" : "proyectos"}</span
           >
         </div>
       </div>
