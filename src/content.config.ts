@@ -26,7 +26,7 @@ const blog = defineCollection({
 });
 
 const galleries = defineCollection({
-  loader: glob({ pattern: "**/index.{md,mdx}", base: `./${GALLERY_PATH}` }),
+  loader: glob({ pattern: "**/index.md*", base: `./${GALLERY_PATH}` }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
