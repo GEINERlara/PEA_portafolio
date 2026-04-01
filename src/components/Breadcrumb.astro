@@ -6,6 +6,11 @@ const currentUrlPath = Astro.url.pathname.replace(/\/+$/, "");
 // eg: /tags/tailwindcss => ['tags', 'tailwindcss']
 const breadcrumbList = currentUrlPath.split("/").slice(1);
 
+// Mapeo de labels para migas de pan
+const breadcrumbLabels: Record<string, string> = {
+  galleries: "Portafolio",
+};
+
 // if breadcrumb is Home > Posts > 1 <etc>
 // replace Posts with Posts (page number)
 if (breadcrumbList[0] === "posts") {
@@ -52,14 +57,14 @@ if (breadcrumbList[0] === "tags" && !isNaN(Number(breadcrumbList[2]))) {
               ]}
               aria-current="page"
             >
-              {decodeURIComponent(breadcrumb)}
+              {breadcrumbLabels[decodeURIComponent(breadcrumb)] || decodeURIComponent(breadcrumb)}
             </span>
           ) : (
             <a
               href={`/${breadcrumb}/`}
               class="breadcrumb-link shrink-0 rounded-md px-1.5 py-0.5 capitalize text-foreground/50 transition-colors duration-200 hover:bg-muted/10 hover:text-accent"
             >
-              {decodeURIComponent(breadcrumb)}
+              {breadcrumbLabels[decodeURIComponent(breadcrumb)] || decodeURIComponent(breadcrumb)}
             </a>
           )}
         </>

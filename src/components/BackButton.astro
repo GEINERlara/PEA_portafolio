@@ -5,6 +5,11 @@ import { SITE } from "@/config";
 // Build breadcrumb from current URL
 const currentUrlPath = Astro.url.pathname.replace(/\/+$/, "");
 const pathSegments = currentUrlPath.split("/").filter(s => s.trim());
+
+// Mapeo de labels para migas de pan
+const breadcrumbLabels: Record<string, string> = {
+  galleries: "Portafolio",
+};
 ---
 
 {
@@ -60,14 +65,14 @@ const pathSegments = currentUrlPath.split("/").filter(s => s.trim());
                     class="breadcrumb-current truncate px-1.5 py-0.5 text-accent/90 capitalize"
                     aria-current="page"
                   >
-                    {decodeURIComponent(segment)}
+                    {breadcrumbLabels[decodeURIComponent(segment)] || decodeURIComponent(segment)}
                   </span>
                 ) : (
                   <a
                     href={`/${pathSegments.slice(0, index + 1).join("/")}/`}
                     class="breadcrumb-link shrink-0 rounded-md px-1.5 py-0.5 capitalize text-foreground/50 transition-colors duration-200 hover:bg-muted/10 hover:text-accent"
                   >
-                    {decodeURIComponent(segment)}
+                    {breadcrumbLabels[decodeURIComponent(segment)] || decodeURIComponent(segment)}
                   </a>
                 )}
               </>
