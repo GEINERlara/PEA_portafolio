@@ -8,9 +8,10 @@ import IconGallery from "@/assets/icons/IconGallery.svg";
 type Props = {
   variant?: "h2" | "h3";
   featured?: boolean;
+  hideCollectionIcon?: boolean;
 } & (CollectionEntry<"blog"> | CollectionEntry<"galleries">);
 
-const { variant: Heading = "h2", featured = false, id, data, filePath, collection } = Astro.props;
+const { variant: Heading = "h2", featured = false, hideCollectionIcon = false, id, data, filePath, collection } = Astro.props;
 
 const { title, description, ...props } = data;
 const href = getEntryPath({ collection, id, filePath });
@@ -47,7 +48,7 @@ const href = getEntryPath({ collection, id, filePath });
       style={{ viewTransitionName: slugifyStr(String(title).replaceAll(".", "-")) }}
     >
       <Heading class="flex items-center gap-2">
-        {collection === "galleries" && !featured && (
+        {collection === "galleries" && !featured && !hideCollectionIcon && (
           <span title="Galería" class="inline-flex items-center justify-center p-1 rounded-md bg-accent/10 text-accent/80 ring-1 ring-accent/20">
             <IconGallery class="size-4" />
           </span>
