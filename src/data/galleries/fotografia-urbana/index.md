@@ -6,6 +6,7 @@ tags:
   - fotografía
   - urbano
   - ciudad
+featured: true
 draft: false
 ---
 

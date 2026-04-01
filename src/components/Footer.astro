@@ -35,12 +35,12 @@ const { noMarginTop = false, class: className, ...attrs } = Astro.props;
           href="/"
           class="group relative flex items-center gap-2 text-lg font-bold tracking-tight"
         >
-          <Logo class="w-28 opacity-80 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105 group-hover:drop-shadow-[0_0_8px_rgba(var(--accent-rgb),0.5)] dark:invert" />
-        </a>
+       <!--    <Logo class="w-28 opacity-80 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105 group-hover:drop-shadow-[0_0_8px_rgba(var(--accent-rgb),0.5)] dark:invert" />
+        </a> -->
         <p
           class="max-w-xs text-center font-cartograph text-[11px] leading-relaxed tracking-wide text-foreground/40 sm:text-start"
         >
-          Un espacio donde la curiosidad se convierte en código.
+          PEA (Proceso de Enseñanza y Aprendizaje),
         </p>
       </div>
 
@@ -79,8 +79,8 @@ const { noMarginTop = false, class: className, ...attrs } = Astro.props;
       class="mt-4 flex flex-col items-center justify-between gap-2 sm:flex-row"
     >
       <p class="font-cartograph text-[11px] tracking-wide opacity-35">
-        &copy; {currentYear}
-        {SITE.title}. Todos los derechos reservados.
+         {currentYear}
+        {SITE.title}. Diseño tomado y adactado de <a href="https://astro.build/themes/details/devosfera/" class="text-accent hover:underline">Astro</a>.
       </p>
       <p class="font-cartograph text-[11px] tracking-wide opacity-30">
         Hecho con <span class="text-accent">&#9829;</span> y mucho café

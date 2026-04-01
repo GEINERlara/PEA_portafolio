@@ -7,6 +7,7 @@ tags:
   - frontend
   - diseño
   - web
+featured: true
 draft: false
 ---
 

@@ -6,7 +6,7 @@ title: "About"
 ## ¿Quién soy?
 
 
-Hola! me llamo Geiner. Soy Ingeniero Industrial con mentalidad analítica y orientación a sistemas complejos. Me interesa entender **cómo funcionan los procesos, por qué fallan y cómo pueden optimizarse con datos**. Vengo de entornos reales —banca, BPO y educación— donde los datos no siempre están limpios ni los problemas bien definidos, y ahí es donde me siento cómodo: estructurando, cuestionando y llevando ambigüedad a modelos operables.
+Hola! me llamo Geiner. Soy Ingeniero Industrial con mentalidad analítica y orientación a sistemas complejos. Me interesa entender **cómo funcionan los procesos, por qué fallan y cómo pueden optimizarse con datos**. Vengo de entornos como —banca, BPO y educación— donde los datos no siempre están limpios ni los problemas bien definidos, y ahí es donde me siento cómodo: estructurando, cuestionando y llevando ambigüedad a modelos operables.
 
 Creo en el aprendizaje autodidacta bien documentado, en construir criterio técnico antes que hype, y en usar la ingeniería y la estadística para resolver problemas concretos.
 
@@ -42,5 +42,5 @@ Las herramientas técnicas (SQL, Python, automatización, pipelines) son para m�
 
 Este blog hace parte de mi **PEA (Proceso de Enseñanza y Aprendizaje)**, un espacio donde documento proyectos, ideas y experimentos mientras construyo criterio técnico en ciencia de datos, optimización y análisis aplicado.
 
-Si quieres conectar, no dudes en encontrarme en [GitHub](https://github.com/GEINERlara) o  [LinkedIn](https://www.linkedin.com/in/geinerlararada/). Siempre es bueno conocer gente cool de la comunidad.
+Si quieres conectar, no dudes en encontrarme en [GitHub](https://github.com/GEINERlara) o  [LinkedIn](https://www.linkedin.com/in/geinerlararada/). Siempre es bueno conocer gente  de la comunidad.
 
