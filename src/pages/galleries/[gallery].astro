@@ -7,7 +7,6 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import BackButton from "@/components/BackButton.astro";
 import Datetime from "@/components/Datetime.astro";
-import IconGallery from "@/assets/icons/IconGallery.svg";
 import { slugifyStr } from "@/utils/slugify";
 import { SITE } from "@/config";
 
@@ -76,13 +75,6 @@ const hasCoverInFolder = coverImage
     <header class="mb-14 border-b border-border/10 pb-10 sm:pb-14 pt-8">
       <div class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
         <div class="max-w-3xl">
-          <div class="mb-5 inline-flex items-center gap-2 text-accent">
-            <IconGallery class="size-5" />
-            <span class="font-cartograph text-xs font-bold tracking-[0.2em] uppercase opacity-90">
-              Colección // {images.length} {images.length === 1 ? "foto" : "fotos"}
-            </span>
-          </div>
-          
           <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-5xl xl:text-6xl text-foreground" style={{ viewTransitionName: slugifyStr(String(title).replaceAll(".", "-")) }}>
             {title}
           </h1>
