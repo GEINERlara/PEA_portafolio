@@ -4,7 +4,6 @@ description: cómo entendí realmente su significado en mi proceso de aprendizaj
 pubDatetime: 2026-03-31T10:00:00Z
 tags:
   - Estadística
-
   - Datos
 draft: false
 ---
@@ -88,7 +87,13 @@ La estadística no decide qué valor es crítico; su función es evaluar qué ta
 
 Cuando se fija una alternativa concreta, el error Tipo II permite calcular la **potencia del test**, definida como:
 
+<<<<<<< HEAD
 $ \text{Potencia} = 1 - \beta $
+=======
+\[
+\text{Potencia} = 1 - \beta
+\]
+>>>>>>> 3ac3a1e (se agrega articulo de errores T1_T2)
 
 La potencia expresa la probabilidad de detectar un efecto real cuando este existe. Según Peña (2001), es una medida fundamental para evaluar la calidad de un contraste de hipótesis y suele utilizarse en el diseño del tamaño de muestra.
 

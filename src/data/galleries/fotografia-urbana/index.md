@@ -7,8 +7,6 @@ tags:
   - urbano
   - ciudad
 featured: true
-repo: ""
-demo: ""
 draft: false
 ---
 
