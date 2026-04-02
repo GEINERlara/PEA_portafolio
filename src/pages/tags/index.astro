@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { withBase } from "@/utils/contentEntry";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
@@ -23,6 +24,7 @@ const tagsWithCount = tags.map(({ tag, tagName }) => ({
   tagName,
   count: getPostsByTag(posts, tag).length,
 }));
+
 
 const maxCount = Math.max(...tagsWithCount.map(t => t.count));
 ---
@@ -62,7 +64,7 @@ const maxCount = Math.max(...tagsWithCount.map(t => t.count));
           const intensity = count / maxCount;
           return (
             <a
-              href={`/tags/${tag}/`}
+              href={withBase(`/tags/${tag}/`)}
               transition:name={tag}
               class="tag-card group"
               data-tag-card
