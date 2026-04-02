@@ -1,7 +1,7 @@
 export const SITE = {
-  website: "https://devosfera.vercel.app/",
+  website: "https://geinerlara.github.io/PEA_portafolio/",
   author: "Geienr Lara",
-  profile: "https://github.com/0xdres",
+  profile: "https://github.com/GEINERlara",
   desc: "Un blog para compartir mis pensamientos y proyectos mientras aprendo cosas nuevas.",
   title: "PEA",
   ogImage: "devosfera-og.webp", // ubicado en la carpeta public
