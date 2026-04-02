@@ -198,3 +198,8 @@ i {
   background: color-mix(in srgb, var(--accent) 15%, transparent);
   box-shadow: 0 4px 15px color-mix(in srgb, var(--accent) 15%, transparent);
 }
+
+:root[data-theme="dark"] .katex,
+:root[data-theme="dark"] .katex * {
+  color: #e6e6e6 !important;
+}
