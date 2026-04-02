@@ -6,6 +6,7 @@ tags:
   - Estadística
   
   - Datos
+featured: true
 draft: false
 ---
 

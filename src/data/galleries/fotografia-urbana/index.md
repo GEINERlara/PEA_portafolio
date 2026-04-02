@@ -6,7 +6,7 @@ tags:
   - fotografía
   - urbano
   - ciudad
-featured: true
+featured: false
 repo: ""
 demo: ""
 draft: false
