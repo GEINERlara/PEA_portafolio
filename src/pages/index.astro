@@ -13,6 +13,9 @@ import { SITE } from "@/config";
 import { SOCIALS } from "@/constants";
 import IntroAudio from "@/components/IntroAudio.astro";
 
+const BASE_URL = import.meta.env.BASE_URL || "/";
+const href = (path: string) => `${BASE_URL}${path}`.replace(/\/{2,}/g, "/");
+
 const [blogPosts, galleryPosts] = await Promise.all([
   getCollection("blog"),
   SITE.showGalleriesInIndex
@@ -59,7 +62,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !("featured" in data && dat
           {SITE.title}
           <a
             target="_blank"
-            href="/rss.xml"
+            href={href("/rss.xml")}
             class="ml-1 inline-block align-middle"
             aria-label="rss feed"
             title="RSS Feed"
@@ -169,7 +172,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !("featured" in data && dat
           <!-- ═══════════════════ CTA ═══════════════════ -->
           <div class="mt-8 mb-4 flex justify-center w-full">
             <LinkButton
-              href="/posts/"
+              href={href("/posts/")}
               class="group inline-flex items-center w-full sm:w-auto justify-center gap-2 rounded-xl border border-accent/20 bg-accent/10 px-8 py-4 text-base font-bold text-accent transition-all duration-300 hover:border-accent hover:bg-accent/20 hover:shadow-xl hover:shadow-accent/20 hover:-translate-y-0.5"
             >
               Explorar todos los posts

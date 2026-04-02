@@ -4,6 +4,9 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import { SITE } from "@/config";
+
+const BASE_URL = import.meta.env.BASE_URL || "/";
+const href = (path: string) => `${BASE_URL}${path}`.replace(/\/{2,}/g, "/");
 ---
 
 <Layout title={`404 Not Found | ${SITE.title}`}>
@@ -18,7 +21,7 @@ import { SITE } from "@/config";
       <span aria-hidden="true">¯\_(ツ)_/¯</span>
       <p class="mt-4 text-2xl sm:text-3xl">Página no encontrada</p>
       <LinkButton
-        href="/"
+        href={href("/")}
         class="my-6 text-lg underline decoration-dashed underline-offset-8"
       >
         Volver a la página principal

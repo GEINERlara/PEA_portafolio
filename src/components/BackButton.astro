@@ -4,6 +4,8 @@ import { SITE } from "@/config";
 
 // Build breadcrumb from current URL
 const currentUrlPath = Astro.url.pathname.replace(/\/+$/, "");
+const BASE_URL = import.meta.env.BASE_URL || "/";
+const href = (path: string) => `${BASE_URL}${path}`.replace(/\/{2,}/g, "/");
 const pathSegments = currentUrlPath.split("/").filter(s => s.trim());
 
 // Mapeo de labels para migas de pan
@@ -20,7 +22,7 @@ const breadcrumbLabels: Record<string, string> = {
           {/* Back button */}
           <a
             id="back-button"
-            href="/"
+            href={href("/")}
             class="back-btn group inline-flex shrink-0 items-center justify-center gap-1 rounded-md px-1.5 py-0.5 text-foreground/50 transition-all duration-200 hover:bg-muted/10 hover:text-accent"
           >
             <IconChevronLeft class="size-3.5 transition-transform duration-200 group-hover:-translate-x-0.5 rtl:rotate-180 rtl:group-hover:translate-x-0.5" />
@@ -43,7 +45,7 @@ const breadcrumbLabels: Record<string, string> = {
 
             {/* Home / Root */}
             <a
-              href="/"
+              href={href("/")}
               class="breadcrumb-link shrink-0 rounded-md px-1.5 py-0.5 text-foreground/50 transition-colors duration-200 hover:bg-muted/10 hover:text-accent"
               aria-label="Ir a inicio"
               title="Inicio"

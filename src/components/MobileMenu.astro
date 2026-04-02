@@ -9,11 +9,31 @@ interface Props {
 }
 
 const { currentPath } = Astro.props;
+const BASE_URL = import.meta.env.BASE_URL || "/";
+
+// Helper para generar URLs con base
+const href = (path: string) => `${BASE_URL}${path}`.replace(/\/{2,}/g, "/");
 
 const isActive = (path: string) => {
-  const currentPathArray = currentPath.split("/").filter((p) => p.trim());
-  const pathArray = path.split("/").filter((p) => p.trim());
-  return currentPath === path || currentPathArray[0] === pathArray[0];
+  // Construir la ruta completa con base
+  let fullPath = `${BASE_URL}${path}`.replace(/\/{2,}/g, "/");
+  // Remover trailing slash para comparación consistente
+  if (fullPath.endsWith("/") && fullPath !== "/") {
+    fullPath = fullPath.slice(0, -1);
+  }
+  
+  // currentPath ya viene sin trailing slash desde Header
+  if (currentPath === fullPath) return true;
+  
+  // Si no coinciden exactamente, comparar solo el segmento relativo al base
+  const basePath = BASE_URL.slice(0, -1); // Remueve trailing /
+  const relativeCurrentPath = currentPath.startsWith(basePath) 
+    ? currentPath.slice(basePath.length) 
+    : currentPath;
+  
+  const relativePath = path === "/" ? "/" : `/${path}`.replace(/^\/+/, "/").replace(/\/$/, "");
+  
+  return relativeCurrentPath === relativePath || relativeCurrentPath.split("/")[1] === path.split("/")[1];
 };
 ---
 
@@ -29,7 +49,7 @@ const isActive = (path: string) => {
       <div class="mobile-menu-inner">
         <nav class="mobile-nav-links">
           <a
-            href="/posts"
+            href={href("/posts")}
             class:list={["mobile-nav-link", { active: isActive("/posts") }]}
             style="--i:0"
           >
@@ -37,7 +57,7 @@ const isActive = (path: string) => {
             <span>Posts</span>
           </a>
           <a
-            href="/tags"
+            href={href("/tags")}
             class:list={["mobile-nav-link", { active: isActive("/tags") }]}
             style="--i:1"
           >
@@ -45,7 +65,7 @@ const isActive = (path: string) => {
             <span>Tags</span>
           </a>
           <a
-            href="/about"
+            href={href("/about")}
             class:list={["mobile-nav-link", { active: isActive("/about") }]}
             style="--i:2"
           >
@@ -55,7 +75,7 @@ const isActive = (path: string) => {
           {
             SITE.showArchives && (
               <a
-                href="/archives"
+                href={href("/archives")}
                 class:list={[
                   "mobile-nav-link",
                   { active: isActive("/archives") },
@@ -70,7 +90,7 @@ const isActive = (path: string) => {
           {
             SITE.showGalleries && (
               <a
-                href="/galleries"
+                href={href("/galleries")}
                 class:list={[
                   "mobile-nav-link",
                   { active: isActive("/galleries") },

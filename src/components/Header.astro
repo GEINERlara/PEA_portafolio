@@ -10,17 +10,37 @@ import MobileMenu from "./MobileMenu.astro";
 import { SITE } from "@/config";
 
 const { pathname } = Astro.url;
+const BASE_URL = import.meta.env.BASE_URL || "/";
 
 // Remove trailing slash from current pathname if exists
 const currentPath =
   pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
 
 const isActive = (path: string) => {
-  const currentPathArray = currentPath.split("/").filter(p => p.trim());
-  const pathArray = path.split("/").filter(p => p.trim());
-
-  return currentPath === path || currentPathArray[0] === pathArray[0];
+  // Construir la ruta completa con base
+  let fullPath = `${BASE_URL}${path}`.replace(/\/{2,}/g, "/");
+  // Remover trailing slash para comparación consistente
+  if (fullPath.endsWith("/") && fullPath !== "/") {
+    fullPath = fullPath.slice(0, -1);
+  }
+  
+  // Comparar rutas completas
+  if (currentPath === fullPath) return true;
+  
+  // Si no coinciden exactamente, comparar solo el segmento relativo al base
+  // Remover el base del currentPath para obtener solo la parte de la ruta
+  const basePath = BASE_URL.slice(0, -1); // Remueve trailing /
+  const relativeCurrentPath = currentPath.startsWith(basePath) 
+    ? currentPath.slice(basePath.length) 
+    : currentPath;
+  
+  const relativePath = path === "/" ? "/" : `/${path}`.replace(/^\/+/, "/").replace(/\/$/, "");
+  
+  return relativeCurrentPath === relativePath || relativeCurrentPath.split("/")[1] === path.split("/")[1];
 };
+
+// Helper para generar URLs con base
+const href = (path: string) => `${BASE_URL}${path}`.replace(/\/{2,}/g, "/");
 ---
 
 <a
@@ -45,7 +65,7 @@ const isActive = (path: string) => {
       >
         <!-- Logo -->
         <a
-          href="/"
+          href={href("/")}
           class="group relative z-20 flex items-center gap-2 text-xl font-bold tracking-tight sm:text-2xl"
         >
           <!-- <span class="nav-logo-text">{SITE.title}</span> -->
@@ -73,28 +93,28 @@ const isActive = (path: string) => {
           <ul class="hidden sm:flex sm:flex-row sm:items-center sm:gap-1">
             <li>
               <a
-                href="/posts"
+                href={href("/posts")}
                 class:list={["nav-link", { "nav-active": isActive("/posts") }]}
                 >Posts</a
               >
             </li>
             <li>
               <a
-                href="/tags"
+                href={href("/tags")}
                 class:list={["nav-link", { "nav-active": isActive("/tags") }]}
                 >Tags</a
               >
             </li>
             <li>
               <a
-                href="/about"
+                href={href("/about")}
                 class:list={["nav-link", { "nav-active": isActive("/about") }]}
                 >About</a
               >
             </li>
             <li class="flex items-center">
               <a
-                href="/search"
+                href={href("/search")}
                 class:list={["nav-link", { "nav-active": isActive("/search") }]}
                 title="Ir a búsqueda">Search</a
               >
@@ -103,7 +123,7 @@ const isActive = (path: string) => {
               SITE.showArchives && (
                 <li>
                   <LinkButton
-                    href="/archives"
+                    href={href("/archives")}
                     class:list={[
                       "nav-link",
                       { "nav-active": isActive("/archives") },
@@ -121,7 +141,7 @@ const isActive = (path: string) => {
               SITE.showGalleries && (
                 <li>
                   <LinkButton
-                    href="/galleries"
+                    href={href("/galleries")}
                     class:list={[
                       "nav-link",
                       { "nav-active": isActive("/galleries") },

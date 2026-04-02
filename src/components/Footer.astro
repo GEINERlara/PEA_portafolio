@@ -6,6 +6,8 @@ import { SITE } from "@/config";
 import Logo from "@/assets/logo/devosfera.svg";
 
 const currentYear = new Date().getFullYear();
+const BASE_URL = import.meta.env.BASE_URL || "/";
+const href = (path: string) => `${BASE_URL}${path}`.replace(/\/{2,}/g, "/");
 
 type Props = {
   noMarginTop?: boolean;
@@ -32,7 +34,7 @@ const { noMarginTop = false, class: className, ...attrs } = Astro.props;
       <!-- Brand column -->
       <div class="flex flex-col items-center gap-3 sm:items-start">
         <a
-          href="/"
+          href={href("/")}
           class="group relative flex items-center gap-2 text-lg font-bold tracking-tight"
         >
        <!--    <Logo class="w-28 opacity-80 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105 group-hover:drop-shadow-[0_0_8px_rgba(var(--accent-rgb),0.5)] dark:invert" />
