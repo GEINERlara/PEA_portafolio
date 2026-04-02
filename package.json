@@ -38,10 +38,13 @@
     "eslint": "^10.0.0",
     "eslint-plugin-astro": "^1.6.0",
     "globals": "^17.3.0",
+    "katex": "^0.16.44",
     "pagefind": "^1.4.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.57.0"
   }
