@@ -18,7 +18,7 @@ export const SITE = {
     grain: true, // capa de ruido visual de fondo
   },
   editPost: {
-    enabled: true,
+    enabled: false,
     text: "Editar este post",
     url: "https://github.com/0xdres/astro-devosfera/edit/main/",
   },
