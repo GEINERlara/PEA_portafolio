@@ -18,6 +18,7 @@ import { SITE } from "./src/config";
 export default defineConfig({
   site: SITE.website,
   base: "/PEA_portafolio/",
+  trailingSlash: "always",
   integrations: [
     mdx({
       extendMarkdownConfig: true,
