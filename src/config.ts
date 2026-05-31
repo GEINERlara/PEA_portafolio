@@ -1,6 +1,6 @@
 export const SITE = {
   website: "https://geinerlara.github.io/PEA_portafolio/",
-  author: "Geienr Lara",
+  author: "Geiener Lara",
   profile: "https://github.com/GEINERlara",
   desc: "Un blog para compartir mis pensamientos y proyectos mientras aprendo cosas nuevas.",
   title: "PEA",
