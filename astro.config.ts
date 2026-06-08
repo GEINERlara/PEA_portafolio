@@ -14,10 +14,19 @@ import {
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import { SITE } from "./src/config";
 
+// Determinar la base URL basada en si es build o dev
+const getBase = () => {
+  // En el build, usar /PEA_portafolio/, en dev usar /
+  if (process.env.NODE_ENV === "production" || process.env.ASTRO_PRODUCTION === "true") {
+    return "/PEA_portafolio/";
+  }
+  return "/";
+};
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
-  base: process.env.NODE_ENV === "production" ? "/PEA_portafolio/" : "/",
+  base: getBase(),
   trailingSlash: "always",
   integrations: [
     mdx({
