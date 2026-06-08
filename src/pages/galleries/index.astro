@@ -7,10 +7,10 @@ import Footer from "@/components/Footer.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import GalleryCard from "@/components/GalleryCard.astro";
 import { SITE } from "@/config";
-import { getGallerySlug } from "@/utils/contentEntry";
+import { getGallerySlug, withBase } from "@/utils/contentEntry";
 
 if (!SITE.showGalleries) {
-  return Astro.redirect("/404");
+  return Astro.redirect(withBase("/404"));
 }
 
 // Cargar todas las imágenes de todas las galerías en build-time

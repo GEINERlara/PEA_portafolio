@@ -1,3 +1,5 @@
 ---
-return Astro.redirect('/posts/1/');
+import { withBase } from '@/utils/contentEntry';
+
+return Astro.redirect(withBase('/posts/1/'));
 ---

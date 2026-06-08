@@ -5,13 +5,13 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import IconGallery from "@/assets/icons/IconGallery.svg";
-import { getEntryPath } from "@/utils/contentEntry";
+import { getEntryPath, withBase } from "@/utils/contentEntry";
 import { slugifyStr } from "@/utils/slugify";
 import getPostsByGroupCondition from "@/utils/getPostsByGroupCondition";
 import { SITE } from "@/config";
 
 if (!SITE.showArchives) {
-  return Astro.redirect("/404");
+  return Astro.redirect(withBase("/404"));
 }
 
 const [blogPosts, galleryPosts] = await Promise.all([
