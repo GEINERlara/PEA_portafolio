@@ -63,7 +63,7 @@ if (breadcrumbList[0] === "tags" && !isNaN(Number(breadcrumbList[2]))) {
             </span>
           ) : (
             <a
-              href={`/${breadcrumb}/`}
+              href={href(`/${breadcrumb}/`)}
               class="breadcrumb-link shrink-0 rounded-md px-1.5 py-0.5 capitalize text-foreground/50 transition-colors duration-200 hover:bg-muted/10 hover:text-accent"
             >
               {breadcrumbLabels[decodeURIComponent(breadcrumb)] || decodeURIComponent(breadcrumb)}

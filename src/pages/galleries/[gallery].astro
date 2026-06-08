@@ -9,6 +9,7 @@ import Footer from "@/components/Footer.astro";
 import BackButton from "@/components/BackButton.astro";
 import Datetime from "@/components/Datetime.astro";
 import { slugifyStr } from "@/utils/slugify";
+import { withBase } from "@/utils/contentEntry";
 import { SITE } from "@/config";
 
 
@@ -93,7 +94,7 @@ const hasCoverInFolder = coverImage
           {
             tags.map((tag: string) => (
               <a
-                href={`/tags/${slugifyStr(tag)}/`}
+                href={withBase(`/tags/${slugifyStr(tag)}/`)}
                 class="post-tag-badge inline-flex items-center gap-1 rounded-full border border-accent/20 bg-accent/5 px-2.5 py-0.5 font-cartograph text-xs text-accent transition-all duration-200 hover:border-accent/40 hover:bg-accent/10 hover:shadow-sm hover:shadow-accent/10"
               >
                 <span class="opacity-50">#</span>
