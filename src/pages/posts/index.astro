@@ -1,4 +1,10 @@
 ---
-const redirectUrl = import.meta.env.BASE_URL + "posts/1/";
-return Astro.redirect(redirectUrl);
+const url = import.meta.env.BASE_URL + "posts/1/";
 ---
+
+<html>
+  <head>
+    <meta http-equiv="refresh" content={`0; url=${url}`} />
+  </head>
+  <body></body>
+</html>
