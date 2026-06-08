@@ -14,7 +14,7 @@ const { frontmatter } = Astro.props;
 <Layout title={`${frontmatter.title} | ${SITE.title}`}>
   <Header />
   <Breadcrumb />
-  <main id="main-content" class="app-layout">
+  <main id="main-content" class="app-layout" data-pagefind-body>
     <!-- Hero con aurora interactiva -->
     <div class="about-hero" data-about-hero>
       <div class="aurora-orb aurora-orb-1"></div>
