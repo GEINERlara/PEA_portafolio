@@ -17,7 +17,7 @@ import { SITE } from "./src/config";
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
-  base: "/PEA_portafolio/",
+  base: "/",
   trailingSlash: "always",
   integrations: [
     mdx({
@@ -30,10 +30,11 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [
       remarkMath,
-      remarkToc, [remarkCollapse, { test: "Table of contents" }]],
+      remarkToc,
+      [remarkCollapse, { test: "Table of contents" }],
+    ],
     rehypePlugins: [rehypeKatex],
     shikiConfig: {
-      // For more themes, visit https://shiki.style/themes
       themes: { light: "min-light", dark: "github-dark-default" },
       defaultColor: false,
       wrap: false,
@@ -64,7 +65,6 @@ export default defineConfig({
       }),
     },
   },
-
   fonts: [
     {
       name: "Wotfard",

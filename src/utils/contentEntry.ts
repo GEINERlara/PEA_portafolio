@@ -14,7 +14,11 @@ export const getGallerySlug = (id: string) => id.replace(/\/index(?:\.(?:md|mdx)
 // Helper para añadir el BASE_URL a las rutas
 export const withBase = (path: string): string => {
   const base = import.meta.env.BASE_URL || "/";
-  return `${base}${path}`.replace(/\/{2,}/g, "/");
+  let url = `${base}${path}`.replace(/\/{2,}/g, "/");
+  if (!url.endsWith("/") && !url.includes(".") && !url.includes("#") && !url.includes("?")) {
+    url += "/";
+  }
+  return url;
 };
 
 export const getEntryPath = (

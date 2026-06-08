@@ -14,12 +14,16 @@ import { SITE } from "@/config";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const [blogPosts, galleryPosts] = await Promise.all([
-    getCollection("blog", ({ data }) => !data.draft),
+    getCollection("blog"),
     SITE.showGalleriesInIndex
-      ? getCollection("galleries", ({ data }) => !data.draft)
+      ? getCollection("galleries")
       : Promise.resolve([]),
   ]);
-  return paginate(getSortedPosts([...blogPosts, ...galleryPosts]), {
+  
+  const filteredBlog = blogPosts.filter(({ data }) => !data.draft);
+  const filteredGalleries = galleryPosts.filter(({ data }) => !data.draft);
+  
+  return paginate(getSortedPosts([...filteredBlog, ...filteredGalleries]), {
     pageSize: SITE.postPerPage,
   });
 }) satisfies GetStaticPaths;
@@ -146,17 +150,9 @@ const totalPosts = page.total;
       // Navigation may have occurred while the module was loading (first load, uncached)
       if (signal.aborted || container.childElementCount > 0) return;
 
-      if (import.meta.env.DEV) {
-        container.innerHTML = `
-          <div class="bg-muted/75 rounded p-4 text-sm mb-4 border border-border">
-            <p><strong>Dev Mode:</strong> La búsqueda intentará usar el índice construido más reciente. Si no ves resultados, ejecuta <code>pnpm run build</code> primero.</p>
-          </div>
-        `;
-        // Removed the early return to allow pagefind to attempt loading the local index
-      }
-
       new PagefindUI({
         element: "#posts-pagefind",
+        bundlePath: import.meta.env.BASE_URL + "pagefind/",
         showImages: false,
         showSubResults: true,
       });

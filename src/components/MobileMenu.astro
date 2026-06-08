@@ -12,21 +12,23 @@ const { currentPath } = Astro.props;
 const BASE_URL = import.meta.env.BASE_URL || "/";
 
 // Helper para generar URLs con base
-const href = (path: string) => `${BASE_URL}${path}`.replace(/\/{2,}/g, "/");
+const href = (path: string) => {
+  let url = `${BASE_URL}${path}`.replace(/\/{2,}/g, "/");
+  if (!url.endsWith("/") && !url.includes(".") && !url.includes("#") && !url.includes("?")) {
+    url += "/";
+  }
+  return url;
+};
 
 const isActive = (path: string) => {
-  // Construir la ruta completa con base
   let fullPath = `${BASE_URL}${path}`.replace(/\/{2,}/g, "/");
-  // Remover trailing slash para comparación consistente
   if (fullPath.endsWith("/") && fullPath !== "/") {
     fullPath = fullPath.slice(0, -1);
   }
   
-  // currentPath ya viene sin trailing slash desde Header
   if (currentPath === fullPath) return true;
   
-  // Si no coinciden exactamente, comparar solo el segmento relativo al base
-  const basePath = BASE_URL.slice(0, -1); // Remueve trailing /
+  const basePath = BASE_URL.slice(0, -1);
   const relativeCurrentPath = currentPath.startsWith(basePath) 
     ? currentPath.slice(basePath.length) 
     : currentPath;
