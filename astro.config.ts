@@ -17,7 +17,7 @@ import { SITE } from "./src/config";
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
-  base: "/",
+  base: process.env.NODE_ENV === "production" ? "/PEA_portafolio/" : "/",
   trailingSlash: "always",
   integrations: [
     mdx({
